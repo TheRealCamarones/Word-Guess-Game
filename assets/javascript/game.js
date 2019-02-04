@@ -15,8 +15,9 @@ var words = [
 // Pick a random word from my options in the array
 var word = words[Math.floor(Math.random() * words.length)];
 
-// Give the user the length of the word plus four extra guesses, I dunno that sounds good right now
-var remainingGuesses = word.length + 4;
+// After talking about it with Dominick I agreed that ten is a good static number for 26 letters to guess, especially once you factor
+// out x, z, q and other rarely used letters
+var remainingGuesses = 10;
 
 // variable to display remaining letters
 var remainingLetters = word.length;
@@ -35,5 +36,11 @@ document.onkeyup = function(event) {
 
 var guess = event.key;
 console.log(guess);
+console.log(answerArray);
+console.log(word);
+if (word[j] = guess) {
+    answerArray.replace(answerArray[j], guess);
+
+}
 }
 }
