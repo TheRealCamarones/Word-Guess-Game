@@ -1,0 +1,8 @@
+body {
+    color: #8B4513;
+}
+
+.background {
+    background-image: url(../images/beerbackground.jpg);
+    background-image: cover;
+}

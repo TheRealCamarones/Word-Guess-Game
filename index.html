@@ -1,26 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game | Cameron Walther</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
 
-    <script src = "assets/javascript/game.js"></script>
+    <script src="assets/javascript/game.js"></script>
 
-    <!-- Main displays on screen -->
-    <h1>Word Guess Game</h1>
-
-    <div>
-        <p id="directions-text">Guess a letter to start playing!</p>
-        <p id="letters-guessed"></p>
-        <p id="remaining-guesses"></p>
-        <p id="answer-display"></p>
-        <p id="wins-text"></p>
-        <p id="losses-text"></p>
+    <div class="jumbotron py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8 py-5">
+                    <img id="beerprofilephoto" src="assets/images/beerprofilephoto.jpg" alt="Photo by rawpixel on Unsplash"
+                        width="400px" height="300px">
+                </div>
+                <div class="col-12 col-md-4 py-5">
+                    <h1>Word Guess Game</h1>
+                    <button id="new-game-button">
+                        Start a New Game
+                    </button>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center" id="answer-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-6 my-3">
+                                    <h2>Guess This Word!</h2>
+                                    <br>
+                                    <span id="answer-display">__ __ __ __ __ __</span>
+                                </div>
+                                <div class="col-12 col-md-6 my-3">
+                                    <h2>Letters Guessed</h2>
+                                    <br>
+                                    <span id="letters-guessed"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
+    <div class="row">
+        <div class="col-12 col-md-4 py-5">
+            <h3>
+                Remaining Guesses: <span id="remaining-guesses">0</span>
+            </h3>
+        </div>
+        <div class="col-12 col-md-4 py-5">
+            <h3>
+                Wins: <span id="wins-text">0</span>
+            </h3>
+        </div>
+        <div class="col-12 col-md-4 py-5">
+            <h3>
+                Losses: <span id="losses-text">0</span>
+            </h3>
+        </div>
+    </div>
+    </div>
+    </div>
+    <p id="directions-text">Guess a letter to start playing!</p>
+    <p id="letters-guessed"></p>
+    <p id="remaining-guesses"></p>
+    <p id="answer-display"></p>
+    <p id="wins-text"></p>
+    <p id="losses-text"></p>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
 </body>
+
 </html>

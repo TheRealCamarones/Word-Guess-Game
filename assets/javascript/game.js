@@ -45,22 +45,22 @@ function newGame() {
     var answerArray = [];
     for (var i = 0; i < word.length; i++) {
         answerArray.push("_");
-}
+    }
 
-// Add game info to DOM
-lettersGuessed.textContent = lettersGuessed;
-remainingGuesses.textContent = remainingGuesses;
-answerDisplay.textContent = answerArray;
-winsText.textContent = winsText;
-lossesText.textContent = lossesText;
+    // Add game info to DOM
+    lettersGuessed.textContent = lettersGuessed;
+    remainingGuesses.textContent = remainingGuesses;
+    answerDisplay.textContent = answerArray;
+    winsText.textContent = winsText;
+    lossesText.textContent = lossesText;
 }
 
 function guess(letter) {
     console.log(letter);
 
-// checks that the game is running and that the letter hasn't been guessed already
+    // checks that the game is running and that the letter hasn't been guessed already
     if (gameRunning === true && guessedLetter.indexOf(letter) === -1) {
-// and then runs the game logic
+        // and then runs the game logic
         guessedLetter.push(letter);
 
         // check if the guess is correct
@@ -68,36 +68,35 @@ function guess(letter) {
             if (word[j].toLowerCase() === letter.toLowerCase()) {
                 answerArray[j] === word[j];
             }
+        }
+
+        answerDisplay.textContent = answerArray.join("");
+
     }
-
-    answerDisplay.textContent = answerArray.join("");
-
-}
     else {
         if (!gameRunning) {
             alert("Start a New Game");
         } else {
-        alert("You've already guessed this letter, try a new one!");
+            alert("You've already guessed this letter, try a new one!");
         }
     }
 }
 // Check for incorrect letter
 function checkincorrect(letter) {
-    if (answerArray.indexOf(letter.toLowerCase()) === -1 
-    &&
-    answerArray.indexOf(letter.toUpperCase()) === -1)
- {
-    remainingGuesses--;
-    incorrectLetter.push(letter);
-    lettersGuessed.textContent = incorrectLetter.join("");
-    remainingGuesses.textContent = remainingGuesses;
-}
+    if (answerArray.indexOf(letter.toLowerCase()) === -1
+        &&
+        answerArray.indexOf(letter.toUpperCase()) === -1) {
+        remainingGuesses--;
+        incorrectLetter.push(letter);
+        lettersGuessed.textContent = incorrectLetter.join("");
+        remainingGuesses.textContent = remainingGuesses;
+    }
 }
 
 // check loss
-function  checkLoss() {
+function checkLoss() {
     if (remainingGuesses === 0) {
-        losses ++;
+        losses++;
         gameRunning = false;
         losses.textContent = losses;
     }
@@ -106,18 +105,17 @@ function  checkLoss() {
 
 // Check win
 function checkWin() {
-    if (word.toLowerCase() === answerArray.join("").toLowerCase())
-    {
+    if (word.toLowerCase() === answerArray.join("").toLowerCase()) {
         wins++;
         gameRunning = false;
         wins.textContent = wins;
-}
+    }
 }
 // click event to start the game
 newGameButton.addEventListener("click", newGame);
 
-// key event to guess a letter
-document.onkeyup = function(event) {
+// key event to guess a letter that's actually a letter
+document.onkeyup = function (event) {
     if (event.keyCode >= 65 && event.keyCode <= 90) {
         guess(event.key);
     }
