@@ -4,7 +4,7 @@ var remainingGuesses = document.getElementById("remaining-guesses");
 var answerDisplay = document.getElementById("answer-display");
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
-var newGameButton = document.getElementById("new-game-button");
+// var newGameButton = document.getElementById("new-game-button");
 
 // Set my variables
 var words = [
@@ -25,7 +25,7 @@ var losses = 0;
 // After talking about it with Dominick I agreed that ten is a good static number for 26 letters to guess, especially once you factor
 // out x, z, q and other rarely used letters
 var remainingGuesses = 10;
-var gameRunning = false;
+var gameRunning = true;
 var answer = "";
 var answerArray = [];
 var guessedLetter = [];
@@ -33,7 +33,7 @@ var incorrectLetter = [];
 
 // newGame function will reset stats
 function newGame() {
-    gameRunning = true;
+    // gameRunning = true;
     remainingGuesses = 10;
     guessedLetter = [];
     incorrectLetter = [];
@@ -113,11 +113,12 @@ function checkWin() {
     }
 }
 // click event to start the game
-newGameButton.addEventListener("click", newGame);
+// newGameButton.addEventListener("click", newGame);
 
 // key event to guess a letter that's actually a letter
 document.onkeyup = function (event) {
     if (event.keyCode >= 65 && event.keyCode <= 90) {
+        newGame;
         guess(event.key);
     }
 }
