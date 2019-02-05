@@ -1,9 +1,9 @@
 // Refer to the DOM elements I plan on updating as game is running
 var lettersGuessed = document.getElementById("letters-guessed");
 var remainingGuesses = document.getElementById("remaining-guesses");
-var answerDisplay = document.getElementById("answer-display");
-var winsText = document.getElementById("wins-text");
-var lossesText = document.getElementById("losses-text");
+var answerArray = document.getElementById("answer-array");
+var wins = document.getElementById("wins-text");
+var losses = document.getElementById("losses-text");
 // var newGameButton = document.getElementById("new-game-button");
 
 // Set my variables
@@ -32,42 +32,38 @@ var guessedLetter = [""];
 var incorrectLetter = [];
 
 // Pick a random word from my options in the array
-    var word = words[Math.floor(Math.random() * words.length)];
+var word = words[Math.floor(Math.random() * words.length)];
 
-    // Make an array of blank spaces to display to the user while they guess
-    var answerArray = [];
+// Make an array of blank spaces to display to the user while they guess
+
+
+
+// newGame function will reset stats
+function newGame() {
+    gameRunning = true;
+    remainingGuesses = 10;
+    lettersGuessed = [""];
+    incorrectLetter = [];
+    answerArray = [""];
     for (var i = 0; i < word.length; i++) {
         answerArray.push("_");
     }
 
-// newGame function will reset stats
-function newGame() {
-    // gameRunning = true;
-    // remainingGuesses = 10;
-    // lettersGuessed = [];
-    // incorrectLetter = [];
-    // answerArray = [];
-    console.log(word)
-
-    
-
-    
-
     // Add game info to DOM
     lettersGuessed.textContent = lettersGuessed;
     remainingGuesses.textContent = remainingGuesses;
-    answerDisplay.textContent = answerArray;
-    winsText.textContent = winsText;
-    lossesText.textContent = lossesText;
+    answerArray.textContent = answerArray;
+    wins.textContent = wins;
+    losses.textContent = losses;
 }
 
 function guess(letter) {
     console.log(letter);
     console.log(word)
     // checks that the game is running and that the letter hasn't been guessed already
-    if (gameRunning === true && guessedLetter.indexOf(letter) === -1) {
+    if (gameRunning === true && lettersGuessed.indexOf(letter) === -1) {
         // and then runs the game logic
-        guessedLetter.push(letter);
+        lettersGuessed.push(letter);
 
         // check if the guess is correct
         for (var j = 0; j < remainingGuesses; j++) {
@@ -75,9 +71,7 @@ function guess(letter) {
                 answerArray[j] === word[j];
             }
         }
-
-        answerDisplay.textContent = answerArray.join("");
-
+        answerArray.textContent = answerArray.join("");
     }
     else {
         if (!gameRunning) {
