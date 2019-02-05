@@ -28,18 +28,10 @@ var remainingGuesses = 10;
 var gameRunning = true;
 var answer = "";
 var answerArray = [];
-var guessedLetter = [];
+var guessedLetter = [""];
 var incorrectLetter = [];
 
-// newGame function will reset stats
-function newGame() {
-    // gameRunning = true;
-    remainingGuesses = 10;
-    guessedLetter = [];
-    incorrectLetter = [];
-    answerArray = [];
-
-    // Pick a random word from my options in the array
+// Pick a random word from my options in the array
     var word = words[Math.floor(Math.random() * words.length)];
 
     // Make an array of blank spaces to display to the user while they guess
@@ -47,6 +39,19 @@ function newGame() {
     for (var i = 0; i < word.length; i++) {
         answerArray.push("_");
     }
+
+// newGame function will reset stats
+function newGame() {
+    // gameRunning = true;
+    // remainingGuesses = 10;
+    // lettersGuessed = [];
+    // incorrectLetter = [];
+    // answerArray = [];
+    console.log(word)
+
+    
+
+    
 
     // Add game info to DOM
     lettersGuessed.textContent = lettersGuessed;
@@ -58,7 +63,7 @@ function newGame() {
 
 function guess(letter) {
     console.log(letter);
-
+    console.log(word)
     // checks that the game is running and that the letter hasn't been guessed already
     if (gameRunning === true && guessedLetter.indexOf(letter) === -1) {
         // and then runs the game logic
@@ -118,7 +123,7 @@ function checkWin() {
 // key event to guess a letter that's actually a letter
 document.onkeyup = function (event) {
     if (event.keyCode >= 65 && event.keyCode <= 90) {
-        newGame;
-        guess(event.key);
+        newGame();
+        console.log(event.key);
     }
 }

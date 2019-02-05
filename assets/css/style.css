@@ -9,6 +9,9 @@ body {
     width: auto;
 }
 
+.other-font {
+    color: #fff;
+}
 #new-game-button {
     outline: none;
     border: none;
