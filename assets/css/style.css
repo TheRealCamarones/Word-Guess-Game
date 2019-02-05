@@ -1,8 +1,23 @@
 body {
-    color: #8B4513;
+    background-color: #1C44FA;
+    color: #A2583D
 }
 
 .background {
     background-image: url(../images/beerbackground.jpg);
     background-image: cover;
+    width: auto;
+}
+
+#new-game-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    background-color: #777;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 6px #777;
+    padding: 2px;
 }

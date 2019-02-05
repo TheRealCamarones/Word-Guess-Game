@@ -4,6 +4,7 @@ var remainingGuesses = document.getElementById("remaining-guesses");
 var answerDisplay = document.getElementById("answer-display");
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
+var newGameButton = document.getElementById("new-game-button");
 
 // Set my variables
 var words = [
