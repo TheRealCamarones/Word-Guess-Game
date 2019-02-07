@@ -114,7 +114,7 @@ function checkWin() {
         wins++;
         gameRunning = false;
         winsText.textContent = wins;
-        button.textContent = "Conratulations! You know a lot of types of beer!"
+        button.textContent = "Conratulations! You know a lot of types of beer! Press a key to start over"
     }
 }
 
