@@ -1,16 +1,21 @@
 body {
-    background-color: #1C44FA;
-    color: #A2583D
+    background-color: #9cd6ce;
+    color: #0008a0;
+    font-size: 28px;
+}
+
+h2 {
+    background: #fff;
 }
 
 .background {
     background-image: url(../images/beerbackground.jpg);
-    background-image: cover;
-    width: auto;
+    background-size: contain;
 }
 
 .other-font {
-    color: #fff;
+    text-align: center;
+    color: black;
 }
 #new-game-button {
     outline: none;
@@ -23,4 +28,8 @@ body {
     letter-spacing: 2px;
     box-shadow: 0 6px #777;
     padding: 2px;
+}
+
+#answer-array {
+    background: #fff;
 }
