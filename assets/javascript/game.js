@@ -104,6 +104,7 @@ function checkLoss() {
         gameRunning = false;
         lossesText.textContent = losses;
         button.textContent = "Sorry, you lost. Press any key to play again!";
+        answerDisplay.textContent = word;
     }
     checkWin();
 }
