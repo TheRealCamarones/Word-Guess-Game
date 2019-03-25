@@ -1,16 +1,17 @@
 body {
     background-color: #9cd6ce;
-    color: #0008a0;
+    color: #fff;
     font-size: 28px;
 }
 
-h2 {
-    background: #fff;
+h1 {
+    background: #777;
 }
 
 .background {
     background-image: url(../images/beerbackground.jpg);
-    background-size: contain;
+    background-size: cover;
+    width: auto;
 }
 
 .other-font {
@@ -23,13 +24,19 @@ h2 {
     cursor: pointer;
     display: block;
     background-color: #777;
-    color: #fff;
+    /* color: #fff; */
     text-transform: uppercase;
     letter-spacing: 2px;
     box-shadow: 0 6px #777;
     padding: 2px;
 }
 
-#answer-array {
+/* #answer-array {
     background: #fff;
+} */
+
+.jumbotron {
+    max-height: 480px;
+    padding: 0px;
+    margin: 0px;
 }
